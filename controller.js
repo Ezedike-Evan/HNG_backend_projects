@@ -3,8 +3,8 @@ const data = {
     current_day : '',
     utc_time : '',
     track : '',
-    github_file_url:'www.kissmyass.com',
-    github_repo_url: 'www.suckmydick.com',
+    github_file_url:'https://github.com/Ezedike-Evan/HNG_backend_projects/blob/stage-1/server.js',
+    github_repo_url: 'https://github.com/Ezedike-Evan/HNG_backend_projects/tree/stage-1',
     status_code : 200
 }
 
