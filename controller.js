@@ -14,7 +14,7 @@ const Api = (req , res)=>{
     const currentDate = new Date()
     data.slack_name = req.query.slack_name
     data.current_day = dayOfWeek[currentDate.getUTCDay()]
-    data.utc_time = currentDate.toISOString().slice(0 , 19) + 'z'
+    data.utc_time = currentDate.toISOString().slice(0 , -5) + 'z'
     data.track = req.query.track
 
     res.setHeader('Content-Type','application/json')
