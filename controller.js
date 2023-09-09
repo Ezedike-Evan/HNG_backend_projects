@@ -17,6 +17,7 @@ const Api = (req , res)=>{
     data.utc_time = currentDate.toISOString().slice(0 , 19) + 'z'
     data.track = req.query.track
 
+    res.setHeader('Content-Type','application/json')
     res.json(data)
 }
 
