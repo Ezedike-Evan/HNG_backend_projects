@@ -1,25 +1,24 @@
 const express = require('express')
 const mongoose = require('mongoose')
-// const { MongoClient } = require("mongodb");
-//const personRoutes = require('./routes/personRoutes')
-const URL = 'mongodb+srv://E4:ZjuMW8UpWKrjw44M@cluster0.jqsjmw3.mongodb.net/?retryWrites=true&w=majority'
+const bodyParser = require('body-parser')
+require('dotenv').config()
+
+const personRoutes = require('./routes/personRoutes')
+
+const app = express()
+const PORT = process.env.PORT || 8000
+
+app.use(bodyParser.json())
+
 
 async function dbConnection(){
-await  mongoose.connect(URL)
+await  mongoose.connect( process.env.URL , { useNewUrlParser: true , useUnifiedTopology: true } )
     try {
-        app.listen(port, () => console.log(`Server is running on port ${port}`))        
+        app.listen(PORT, () => console.log(`Server is running on port ${PORT}`))        
     } catch (error) {
         console.log(error.message)
     }
 }
 dbConnection()
 
-const app = express()
-
-//app.use('/api', personRoutes)
-app.get('/',(req,res)=>{
-    res.send('hello there')
-})
-const port = process.env.PORT || 8000
-
-
+app.use('/api', personRoutes)
