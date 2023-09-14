@@ -2,9 +2,9 @@ const Person = require('../model/personModel')
 
 //controllers
 const createPerson = async (req, res) => {
-  const { name , age , gender } = req.body
+  const { name , gender } = req.body
   try {
-    const newPerson = new Person({ name, age, gender}) 
+    const newPerson = new Person({ name, gender}) 
     await newPerson.save()
     res.status(201).json(newPerson)
   } catch (err) {
@@ -27,9 +27,9 @@ const getPersonByName = async (req, res) => {
 
 const updatePerson = async (req, res) => {
   const { user_id } = req.params
-  const { name, age, gender} = req.body
+  const { name, gender} = req.body
   try {
-    const updatedPerson = await Person.findOneAndUpdate({name : user_id} , { name , age , gender } , {new : true})
+    const updatedPerson = await Person.findOneAndUpdate({name : user_id} , { name, gender } , {new : true})
     if (!updatedPerson) {
       return res.status(404).json({ error: 'Person not found' })
     }
