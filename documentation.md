@@ -21,7 +21,6 @@ Welcome to the documentation for the My RESTful API. This API allows you to perf
      ```bash
        {
           "name" : "John",
-          "age" : 34,
           "gender" : "male"
        }  
     Response (201 Created):
@@ -29,7 +28,6 @@ Welcome to the documentation for the My RESTful API. This API allows you to perf
        {
          "_id": "5f6b6419aeb175214c5d7a24",
          "name": "John",
-         "age": 34,
          "gender": "male"
          "__v": 0
        }
@@ -43,7 +41,6 @@ Welcome to the documentation for the My RESTful API. This API allows you to perf
        {
          "_id": "5f6b6419aeb175214c5d7a24",
          "name": "John",
-         "age": 34,
          "gender": "male"
          "__v": 0
        }
@@ -56,7 +53,6 @@ Welcome to the documentation for the My RESTful API. This API allows you to perf
      ```
        {
           "name" : "Evan",
-          "age" : 100,
           "gender" : "female"
        }
      ``` 
@@ -65,7 +61,6 @@ Welcome to the documentation for the My RESTful API. This API allows you to perf
        {
          "_id": "5f6b6419aeb175214c5d7a24",
          "name": "Evan",
-         "age": 100,
          "gender": "female"
          "__v": 0
        }
@@ -87,14 +82,12 @@ Welcome to the documentation for the My RESTful API. This API allows you to perf
      Request Body:
      ```
        name(string, required, unique): The name of the person
-       age(number) : Age of the person
        gender(enum, lowercase) : male or female
      ```
     Response Body:
     ```
       id (string): The unique identifier of the created person.
       name (string): The name of the person.
-      age(number) : Age of the person.
       gender(enum, lowercase) : male or female.
        __v (number): MongoDB version key (internal use).
     ```
@@ -105,7 +98,6 @@ Welcome to the documentation for the My RESTful API. This API allows you to perf
     ```
       id (string): The unique identifier of the person.
       name (string): The name of the person.
-      age(number) : Age of the person (if available).
       gender(enum, lowercase) : male or female (if available).
        __v (number): MongoDB version key (internal use).
     ```
@@ -115,15 +107,13 @@ Welcome to the documentation for the My RESTful API. This API allows you to perf
      Request Body:
      ```
        name(string, unique): The new name of the person
-       age(number) : The new age of the person
        gender(enum, lowercase) : the new gender of the person
      ```
     Response Body:
     ```
       id (string): The unique identifier of the created person.
       name (string): The new name of the person.
-      age(number) : The new age of the person.
-      gender(enum, lowercase) :The new gender of the person.
+       gender(enum, lowercase) :The new gender of the person.
        __v (number): MongoDB version key (internal use).
     ```
 
@@ -186,7 +176,6 @@ Welcome to the documentation for the My RESTful API. This API allows you to perf
      - request body
        ```
          {
-            "age" : 100,
             "gender" : "female"
          }
        ```
@@ -195,7 +184,6 @@ Welcome to the documentation for the My RESTful API. This API allows you to perf
          {
            "_id": "6502c9d1980ef30033581545",
            "name": null,
-           "age": 100,
            "gender": "female",
            "__v": 0
          }
