@@ -7,11 +7,6 @@ const personSchema = new mongoose.Schema(
             unique : true,
             required : true,
         },
-        age : {
-            type : Number,
-            min : 1,
-            max : 200
-        },
         gender : {
             type : String,
             lowercase : true,
